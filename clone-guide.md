@@ -41,8 +41,7 @@ git remote set-url --push mvp no_push
 
 To pull the latest config files:
 ```bash
-git fetch mvp
-git ls-tree -r --name-only mvp/main | grep -E '.+/(CLAUDE|AGENTS)\.md$' | xargs git checkout mvp/main --
+npm run mvp-sync
 ```
 
 This finds and overwrites every `CLAUDE.md` and `AGENTS.md` in subdirectories with whatever is on `mvp/main` — no merge, no history entanglement. Run this any time you want to sync config updates from the template.

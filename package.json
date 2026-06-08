@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed": "node --env-file=.env.local --experimental-strip-types scripts/seed.ts"
+    "seed": "node --env-file=.env.local --experimental-strip-types scripts/seed.ts",
+    "mvp-sync": "git fetch mvp && git ls-tree -r --name-only mvp/main | grep -E '.+/(CLAUDE|AGENTS)\\.md$' | xargs git checkout mvp/main --"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
