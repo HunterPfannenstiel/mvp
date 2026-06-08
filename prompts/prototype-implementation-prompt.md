@@ -41,7 +41,7 @@ Example Page Composition:
         6. **Frontend Only:** Inform the subagent that it will only be interacting with the frontend. If it needs data it will mock it purely on the frontend.
 
 5. Please pause and wait for my approval to continue.
-6. Once approved please gather all relevant information needed to make highly-informed decisions for our server-side code. Present this to me at a high-level.
+6. Once approved please determine if any changes to the backend are needed (you do not need to examine the server code to figure this out, it should be apparent after the agent finishes). If no backend changes are needed then the session is done, else gather all relevant information needed to make highly-informed decisions for our server-side code. Present this to me at a high-level.
 7. Wait for my explicit approval and collaborate with me
 8. Spawn a subagent with the instruction of implementing the backend for the feature. Please pass it down the contents of our discussion
 9. We should be done
