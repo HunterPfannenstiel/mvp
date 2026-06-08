@@ -29,3 +29,20 @@ git push -u origin main
 ## Key Rule
 
 `my-app` is the git root and where all dev work happens. The outer `<project-name>` folder is just a namespaced container with no git history of its own.
+
+## Remote Referencing
+
+After setup, wire a read-only `mvp` remote so you can pull updates to Claude/Agent config files without merging unrelated history:
+
+```bash
+git remote add mvp https://github.com/HunterPfannenstiel/mvp.git
+git remote set-url --push mvp no_push
+```
+
+To pull the latest config files:
+```bash
+git fetch mvp
+git ls-tree -r --name-only mvp/main | grep -E '.+/(CLAUDE|AGENTS)\.md$' | xargs git checkout mvp/main --
+```
+
+This finds and overwrites every `CLAUDE.md` and `AGENTS.md` in subdirectories with whatever is on `mvp/main` — no merge, no history entanglement. Run this any time you want to sync config updates from the template.
