@@ -1,1 +1,0 @@
-Walk me through the high level steps you will take to implement this feature and then I will approve of them.

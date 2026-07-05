@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node --env-file=.env.local --experimental-strip-types scripts/seed.ts",
+    "seed-remote": "USE_LOCAL_BLOB=false node --env-file=.env.local --experimental-strip-types scripts/seed.ts",
     "mvp-sync": "git fetch mvp && git ls-tree -r --name-only mvp/main | grep -E '^prompts/|.+/(CLAUDE|AGENTS)\\.md$' | xargs git checkout mvp/main -- && git add -u && git commit -m 'Pulled mvp repo' && git push origin main"
   },
   "dependencies": {
